@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H M Imrul Kayes Emon</title>
+<meta name="description" content="Emon, a computer science student at North South University in Dhaka. I make games in Godot and build Python and database projects.">
+<link rel="icon" href="https://github.com/emon63-cloud.png?size=64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ash:#E6EAE4;      /* page, the pale green-grey of the trees behind the photo */
+    --paper:#F3F5F1;    /* raised surfaces */
+    --ink:#1C2623;      /* text */
+    --moss:#566A5F;     /* secondary text */
+    --thread:#2F6E69;   /* links, the teal of the embroidered collar */
+    --gold:#A8812A;     /* the one warm note: Ashen Dynasty */
+    --line:#C9D1C9;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ash);color:var(--ink);
+       font:400 1.125rem/1.65 "Source Serif 4",Georgia,serif;
+       -webkit-font-smoothing:antialiased}
+  a{color:var(--thread);text-underline-offset:.18em;text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  a:focus-visible{outline:2px solid var(--thread);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:Syne,system-ui,sans-serif;margin:0;line-height:1.05}
+
+  /* ---------- hero ---------- */
+  header{padding:56px 0 72px}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+       font-family:Syne,sans-serif;font-weight:500;font-size:.95rem}
+  .top nav{display:flex;gap:22px}
+  .top a{color:var(--ink);text-decoration:none}
+  .top a:hover{color:var(--thread)}
+  .hero{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-top:72px}
+  .name{font-weight:800;font-size:clamp(5rem,17vw,12.5rem);letter-spacing:-.045em;line-height:.82}
+  .full{font-family:Syne,sans-serif;font-weight:500;font-size:1.05rem;color:var(--moss);margin:22px 0 0}
+  .intro{max-width:34em;font-size:1.3rem;line-height:1.55;margin:28px 0 0}
+  .photo{width:clamp(150px,22vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;
+         border:6px solid var(--paper);box-shadow:0 0 0 1px var(--line);margin-bottom:12px}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-block;font-family:Syne,sans-serif;font-weight:700;font-size:.98rem;
+       padding:12px 20px;border-radius:999px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn:hover{background:var(--thread);border-color:var(--thread);color:var(--paper)}
+
+  /* ---------- sections ---------- */
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  section > .wrap > h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.02em;margin-bottom:36px}
+
+  /* the game gets the stage */
+  .feature{background:var(--ink);color:var(--ash);border-radius:28px;padding:clamp(28px,5vw,56px);
+           display:grid;grid-template-columns:1.25fr 1fr;gap:40px;position:relative;overflow:hidden}
+  .feature h3{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em;color:#fff}
+  .feature .sub{font-family:Syne,sans-serif;font-weight:500;color:var(--gold);margin:12px 0 22px;font-size:1.1rem}
+  .feature p{margin:0 0 14px;color:#D5DCD6}
+  .feature ul{margin:0;padding:0;list-style:none}
+  .feature li{padding:12px 0;border-bottom:1px solid #34413C;color:#D5DCD6}
+  .feature li:last-child{border-bottom:0}
+  .feature li b{display:block;color:#fff;font-family:Syne,sans-serif;font-weight:700;font-size:1rem}
+  .crest{position:absolute;right:-60px;top:-60px;width:260px;opacity:.09;pointer-events:none}
+
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+  .project{background:var(--paper);border-radius:20px;padding:32px;border:1px solid var(--line);
+           display:flex;flex-direction:column}
+  .project h3{font-size:1.75rem;letter-spacing:-.02em}
+  .project .what{color:var(--moss);font-family:Syne,sans-serif;font-weight:500;margin:8px 0 16px}
+  .project p{margin:0 0 16px}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin:auto 0 18px;padding:0;list-style:none}
+  .stack li{font-family:Syne,sans-serif;font-size:.85rem;font-weight:500;padding:4px 12px;
+            border-radius:999px;background:var(--ash);color:var(--ink)}
+  .feature .stack li{background:#2A3632;color:#E6EAE4}
+  .feature .stack{margin:22px 0 0}
+  .project .foot{font-size:1rem}
+  .muted{color:var(--moss)}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+  .skills h3{font-size:1.2rem;margin-bottom:10px}
+  .skills p{margin:0;color:var(--ink)}
+
+  /* contact */
+  .contact{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+  .contact p{max-width:30em;margin:0;font-size:1.25rem}
+  footer{padding:40px 0 56px;color:var(--moss);font-size:.95rem}
+
+  /* one entrance: the name rises once on load */
+  @media (prefers-reduced-motion:no-preference){
+    .name{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+    .photo{animation:fade 1.2s .3s both}
+    @keyframes rise{from{transform:translateY(.25em);opacity:0}to{transform:none;opacity:1}}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+  }
+
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr}
+    .photo{order:-1}
+    .feature,.projects{grid-template-columns:1fr}
+    .skills{grid-template-columns:1fr;gap:24px}
+    .top nav{gap:14px}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 20px}
+    .top nav a:not(:last-child){display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="top">
+      <span>emon63-cloud</span>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div>
+        <h1 class="name">Emon</h1>
+        <p class="full">H M Imrul Kayes Emon, North South University, Dhaka</p>
+        <p class="intro">I study computer science and build things that people use: a dragon strategy game for Android, an AI study assistant, and database-backed web apps.</p>
+        <div class="links">
+          <a class="btn solid" href="#work">See my work</a>
+          <a class="btn" href="https://github.com/emon63-cloud">GitHub profile</a>
+        </div>
+      </div>
+      <img class="photo" src="https://github.com/emon63-cloud.png?size=500" alt="Portrait of Emon outdoors in a grey panjabi" width="250" height="250">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="work">
+    <div class="wrap">
+      <h2>Work</h2>
+
+      <article class="feature">
+        <svg class="crest" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M50 4 88 18v30c0 24-16 40-38 48C28 88 12 72 12 48V18Z"/></svg>
+        <div>
+          <h3>Ashen Dynasty</h3>
+          <p class="sub">Dragons &amp; Heirs, a strategy game for Android</p>
+          <p>Build an estate, hatch dragons from eggs, and rule a barony through the generations of your house until it becomes an empire across six realms.</p>
+          <p>Made in Godot 4 and now in closed testing on Google Play.</p>
+          <ul class="stack" aria-label="Built with">
+            <li>Godot 4.7</li><li>GDScript</li><li>Android</li><li>Play Billing</li><li>AdMob</li>
+          </ul>
+        </div>
+        <ul aria-label="What is in the game">
+          <li><b>Dragons you raise</b>From egg to elder, with a first-person saddle view in flight.</li>
+          <li><b>A family that lasts</b>Heirs, marriages, rival houses and a court to manage.</li>
+          <li><b>War and story</b>Lane battles with troop types for every people, and a story mode in three acts.</li>
+        </ul>
+      </article>
+
+      <div class="projects">
+        <article class="project">
+          <h3>RAG Study Helper</h3>
+          <p class="what">Ask questions about your own notes</p>
+          <p>Upload PDF books and notes, then chat with them or generate quizzes. Answers come only from your material and cite page numbers.</p>
+          <ul class="stack" aria-label="Built with">
+            <li>Python</li><li>Streamlit</li><li>ChromaDB</li><li>Sentence Transformers</li><li>Groq</li>
+          </ul>
+          <p class="foot">Team project for CSE299. <a href="https://github.com/emon63-cloud/rag-study-helper">View the code</a></p>
+        </article>
+
+        <article class="project">
+          <h3>SoldNSU</h3>
+          <p class="what">A marketplace for NSU students</p>
+          <p>Students sell books, lab kits and electronics to each other, chat with buyers, and admins approve listings. The database has views, triggers and stored procedures.</p>
+          <ul class="stack" aria-label="Built with">
+            <li>Flask</li><li>MySQL</li><li>SQL</li><li>Jinja</li>
+          </ul>
+          <p class="foot muted">Team project for CSE311. The code is private for now.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Games</h3>
+          <p>Godot 4 and GDScript, Android export, in-app purchases, ads and Play Games Services.</p>
+        </div>
+        <div>
+          <h3>Python and AI</h3>
+          <p>Flask and Streamlit apps, retrieval-augmented generation, embeddings and vector databases.</p>
+        </div>
+        <div>
+          <h3>Databases and the web</h3>
+          <p>MySQL schema design, normalization, SQL queries, HTML and CSS, Git and GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Contact</h2>
+        <p style="margin-top:20px">Working on a team project, a game, or something that needs a database? I am happy to talk.</p>
+      </div>
+      <a class="btn solid" href="https://github.com/emon63-cloud">Find me on GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 H M Imrul Kayes Emon</div>
+</footer>
+</body>
+</html>
